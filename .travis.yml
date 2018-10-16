@@ -1,0 +1,39 @@
+language:
+  python
+
+services:
+  - docker
+
+python:
+  - 3.6
+
+sudo: required
+
+env:
+  global:
+    - K8S_OPS_REPO_BRANCH=master
+    - K8S_OPS_REPO_SLUG=datahq/deploy
+    - DOCKER_IMAGE=datopian/factory
+    - DEPLOY_YAML_UPDATE_FILE=values.auto-updated.yaml
+    - DEPLOY_VALUES_CHART_NAME=factory
+    - DEPLOY_VALUES_IMAGE_PROP=image
+    - DEPLOY_COMMIT_MESSAGE="automatic update of dhq-factory"
+    - DEPLOY_GIT_EMAIL=dhq-deployer@null.void
+    - DEPLOY_GIT_USER=dhq-deployer
+
+install:
+  - make install
+
+script:
+  - curl -s https://raw.githubusercontent.com/datahq/deploy/master/apps_travis_script.sh > .travis.sh
+  - bash .travis.sh script
+
+after_success:
+  - coveralls
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: bash .travis.sh deploy
+  on:
+    branch: master
