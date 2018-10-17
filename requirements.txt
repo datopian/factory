@@ -1,2 +1,2 @@
 dataflows
-datapackage<1.0
+rfc3986

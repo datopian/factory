@@ -12,4 +12,4 @@ RUN pip install -r /app/requirements.txt
 
 ADD . /app
 
-ENTRYPOINT ["/app/startup.sh"]
+CMD ["server"]
