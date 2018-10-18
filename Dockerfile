@@ -1,4 +1,5 @@
-FROM frictionlessdata/datapackage-pipelines:latest
+# TODO: change tag to latest
+FROM frictionlessdata/datapackage-pipelines:v2.0.0rc
 
 
 RUN apk --update --no-cache add libpq postgresql-dev libffi libffi-dev build-base python3-dev ca-certificates
@@ -12,4 +13,4 @@ RUN pip install -r /app/requirements.txt
 
 ADD . /app
 
-ENTRYPOINT ["/app/startup.sh"]
+CMD ["server"]
