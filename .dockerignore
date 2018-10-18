@@ -6,3 +6,4 @@ tests/
 datasets/*/data/
 datasets/*/archive/
 datasets/*/scripts/
+datasets/*/cache/
