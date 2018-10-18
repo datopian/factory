@@ -1,2 +1,4 @@
+https://github.com/datahq/datapackage-pipelines-datahub/archive/master.zip
 dataflows
 rfc3986<2.0,>=1.1.0
+datapackage>=1.5.1
