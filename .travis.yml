@@ -21,9 +21,6 @@ env:
     - DEPLOY_GIT_EMAIL=dhq-deployer@null.void
     - DEPLOY_GIT_USER=dhq-deployer
 
-install:
-  - make install
-
 script:
   - curl -s https://raw.githubusercontent.com/datahq/deploy/master/apps_travis_script.sh > .travis.sh
   - bash .travis.sh script
