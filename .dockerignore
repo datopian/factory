@@ -7,3 +7,5 @@ datasets/*/data/
 datasets/*/archive/
 datasets/*/scripts/
 datasets/*/cache/
+node_modules
+npm-debug.log
