@@ -22,14 +22,9 @@ env:
     - DEPLOY_GIT_USER=dhq-deployer
 
 script:
+  - openssl aes-256-cbc -K $encrypted_f31baa052f19_key -iv $encrypted_f31baa052f19_iv -in config.json.enc -out config.json -d
   - curl -s https://raw.githubusercontent.com/datahq/deploy/master/apps_travis_script.sh > .travis.sh
   - bash .travis.sh script
-
-after_success:
-  - coveralls
-
-before_deploy:
-  - openssl aes-256-cbc -K $encrypted_f31baa052f19_key -iv $encrypted_f31baa052f19_iv -in config.json.enc -out config.json -d
 
 deploy:
   skip_cleanup: true
