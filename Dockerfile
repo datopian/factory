@@ -14,8 +14,6 @@ RUN pip install -r /app/requirements.txt
 
 ADD . /app
 
-RUN mkdir -p ~/.config/datahub
-ADD config.json /app/config.json
-RUN cp config.json ~/.config/datahub/config.json
+RUN python copy_configs.py
 
 CMD ["server"]

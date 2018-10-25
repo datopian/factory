@@ -1,4 +1,6 @@
 https://github.com/datahq/datapackage-pipelines-datahub/archive/master.zip
+bs4
 dataflows
 rfc3986<2.0,>=1.1.0
 datapackage>=1.5.1
+user_agent

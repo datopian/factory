@@ -71,3 +71,6 @@ shippable/
 # flask
 flask_session/
 
+# config
+
+*config.json

@@ -28,3 +28,6 @@
 [submodule "datasets/exchange-rates"]
 	path = datasets/core/exchange-rates
 	url = https://github.com/datasets/exchange-rates
+[submodule "datasets/sports-data/football-datasets"]
+	path = datasets/sports-data/football-datasets
+	url = git@github.com:datasets/football-datasets.git
