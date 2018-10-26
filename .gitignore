@@ -73,4 +73,5 @@ flask_session/
 
 # config
 
-*config.json
+*config.json*
+*secrets.tar

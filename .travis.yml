@@ -22,9 +22,8 @@ env:
     - DEPLOY_GIT_USER=dhq-deployer
 
 script:
-  - openssl aes-256-cbc -K $encrypted_f31baa052f19_key -iv $encrypted_f31baa052f19_iv -in datasets/core/config.json.enc -out datasets/core/config.json -d
-  - openssl aes-256-cbc -K $encrypted_f31baa052f19_key -iv $encrypted_f31baa052f19_iv -in datasets/datahq/config.json.enc -out datasets/datahq/config.json -d
-  - openssl aes-256-cbc -K $encrypted_f31baa052f19_key -iv $encrypted_f31baa052f19_iv -in datasets/sports-data/config.json.enc -out datasets/sports-data/config.json -d
+  - openssl aes-256-cbc -K $encrypted_f31baa052f19_key -iv $encrypted_f31baa052f19_iv -in secrets.tar.enc -out secrets.tar -d
+  - tar xvf secrets/secrets.tar
   - curl -s https://raw.githubusercontent.com/datahq/deploy/master/apps_travis_script.sh > .travis.sh
   - bash .travis.sh script
 

@@ -54,23 +54,36 @@ Factory server will read `pipeline-spec.yaml` for each dataset and run the flows
 
 To publish dataset on Datahub, each user has it's own config file. We need this config file for each user who is subscribed to factory in order to push datasets under appropriate username.
 
-Config files for Datahub are usually saved in `~/.config/datahub/config.json`. You will probably need to login with your datahub account if you can't find one. Login in and copy your config file here
+Config files for Datahub are usually saved in `~/.config/datahub/config.json`. You will probably need to login with your datahub account if you can't find one. Login in and copy your config file in secrets directory.
 
 ```
 data login
-cp ~/.config/datahub/config.json .
+cp ~/.config/datahub/config.json secrets/config.json.example
 ```
 
-You will need to encrypt it via [Travis](https://docs.travis-ci.com/user/encrypting-files/) and save into relevant user's directory:
+In order to add new config file to the list, you will have to add `cinfig.json.example` to the `secrets/secrets.tar` Which is encrypted. Please contact if you are not the member of datahub developers team, else:
+
+* Download and decrypt `secrets.tar.enc` from private GitLab repository
+* extract `secrets.tar`
+* add `cinfig.json.example` to the directory
+* archive `secrets.tar`
+* encrypt with `travis enctypr-file` and push back to github
+  * In parallel encrypt with password (used when decrypting) and push back file to GitLab private repo
 
 ```
-travis encrypt-fil config.json
-mv config datasets/example
+# Extract
+tar xvf secrets.tar
+# Add new Config
+cp ~/.config/datahub/config.json secrets/config.json.example
+# Archive again
+tar cvf secrets.tar secrets/
+# Encrypt
+travis encrypt-file secrets.tar
+# Commit and push
+git add secrets.tar.enc
+git commit -m'example user's config'
+git push
 ```
-
-Once that is done please copy openssl command (displayed after running `travis encrypt-fil config.json`) into the `.travis.yml` in the script's section.
-
-*Note: You might need to change `-in` and `-out` values there*
 
 ## Developers
 

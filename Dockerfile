@@ -14,6 +14,7 @@ RUN pip install -r /app/requirements.txt
 
 ADD . /app
 
-RUN python copy_configs.py
+RUN mkdir -p ~/.config/datahub
+RUN cp secrets/* ~/.config/datahub/
 
 CMD ["server"]
