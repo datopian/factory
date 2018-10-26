@@ -1,4 +1,4 @@
-https://github.com/datahq/datapackage-pipelines-datahub/archive/master.zip
+datapackage_pipelines_datahub>=0.0.5
 bs4
 dataflows
 rfc3986<2.0,>=1.1.0
