@@ -81,7 +81,7 @@ tar cvf secrets.tar secrets/
 travis encrypt-file secrets.tar
 # Commit and push
 git add secrets.tar.enc
-git commit -m'example user's config'
+git commit -m"example user's config"
 git push
 ```
 
