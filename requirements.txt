@@ -1,4 +1,4 @@
-datapackage_pipelines_datahub>=0.0.5
+datapackage_pipelines_datahub>=0.0.6
 bs4
 dataflows
 rfc3986<2.0,>=1.1.0
