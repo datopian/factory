@@ -19,9 +19,6 @@
 [submodule "datasets/oil-prices"]
 	path = datasets/core/oil-prices
 	url = https://github.com/datasets/oil-prices
-[submodule "datasets/population-growth-estimates-and-projections"]
-	path = datasets/core/population-growth-estimates-and-projections
-	url = https://github.com/datasets/population-growth-estimates-and-projections
 [submodule "datasets/gold-prices"]
 	path = datasets/core/gold-prices
 	url = https://github.com/datasets/gold-prices
