@@ -28,3 +28,6 @@
 [submodule "datasets/sports-data/football-datasets"]
 	path = datasets/sports-data/football-datasets
 	url = https://github.com/datasets/football-datasets
+[submodule "datasets/core/co2-ppm-daily"]
+	path = datasets/core/co2-ppm-daily
+	url = https://github.com/datasets/co2-ppm-daily.git
