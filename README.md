@@ -6,7 +6,7 @@ The service is responsible for running the flows for datasets that are frequentl
 
 ## Install
 
-You will need python 3.x.
+You will need python 3.x
 
 ```
 pip install -r requirements.txt
